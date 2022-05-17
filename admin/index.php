@@ -170,6 +170,12 @@ if(isset($_GET['car_edit'])){
     
 }
 
+if(isset($_GET['car_delete'])){
+
+    include("car_delete.php");
+    
+}
+
 ?>
 
 </div><!-- container-fluid Ends -->

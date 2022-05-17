@@ -1,4 +1,14 @@
+<?php
 
+if(!isset($_SESSION['usu_rut'])){
+
+echo "<script>window.open('../checkout.php','_self')</script>";
+
+}
+
+else {
+
+?>
 <div class="modal fade" id="editChildresn<?php echo $reg_id_vehi; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -84,8 +94,28 @@
               <button type="submit" name="submit" class="btn btn-primary">Solicitar</button>
             </div>
        </form>
-        
     </div>
   </div>
 </div>
-
+<?php
+if(isset($_POST['submit'])){
+   
+   $nombre = $_POST['nombre'];
+   $asunto = $_POST['asunto'];
+   $mensaje = $_POST['mensaje'];
+   $destino_r = $_POST['destino_r'];
+    
+   $insert_product = "insert into solicitud (nombre,asunto,destino_r,mensaje) values ('$nombre','$asunto','$destino_r','$mensaje')";
+     
+   $run_product = mysqli_query($con,$insert_product);
+     
+   if($run_product){
+     
+   echo "<script>alert('Registro ingresado con éxito')</script>";
+     
+   echo "<script>window.open('my_account.php?history','_self')</script>";
+   
+   }
+   }
+?>
+<?php } ?>

@@ -220,7 +220,7 @@ else {
 
 <h3 class="panel-title" ><!-- panel-title Starts -->
 
-<i class="fa fa-money fa-fw" ></i> Registros
+<i class="fa fa-car" ></i> Vehículos
 
 </h3><!-- panel-title Ends -->
 
@@ -235,12 +235,12 @@ else {
 <thead>
 
 <tr>
-<th>ID registro</th>
-<th>Rut Usuario</th>
-<th>Kilometraje</th>
-<th>Destino</th>
-<th>Fecha/Hora</th>
-<th>Tipo</th>
+<th>Patente</th>
+<th>Marca</th>
+<th>Foto</th>
+<th>Estado</th>
+<th>Reservado Por:</th>
+<th>Acciones</th>
 </tr>
 
 </thead>
@@ -251,23 +251,41 @@ else {
 
 $i = 0;
 
-$get_reg = "select * from registros order by fecha_reg desc limit 0,8";
+$get_ve = "select * from vehiculos";
 
-$run_reg = mysqli_query($con,$get_reg);
+$run_ve = mysqli_query($con,$get_ve);
 
-while($row_reg=mysqli_fetch_array($run_reg)){
+while($row_ve=mysqli_fetch_array($run_ve)){
 
-$reg_id = $row_reg['id_reg'];
+$ve_id_vehi = $row_ve['id_vehi'];
 
-$reg_rut = $row_reg['usu_rut'];
+$ve_patente = $row_ve['patente'];
 
-$reg_kilometraje = $row_reg['kilometraje'];
+$ve_kilometraje = $row_ve['kilometraje'];
 
-$reg_destino = $row_reg['destino'];
+$ve_marca = $row_ve['marca'];
 
-$reg_fecha = $row_reg['fecha_reg'];
+$ve_foto_vehi = $row_ve['foto_vehi'];
 
-$reg_tipo = $row_reg['tipo_reg'];
+$ve_fecha_registro = $row_ve['fecha_registro'];
+
+$ve_modelo = $row_ve['modelo'];
+
+$ve_n_chasis = $row_ve['n_chasis'];
+
+$ve_n_motor = $row_ve['n_motor'];
+
+$ve_year = $row_ve['year'];
+
+$ve_color = $row_ve['color'];
+
+$ve_tipo_vehi = $row_ve['tipo_vehi'];
+
+$ve_tipo_combustible = $row_ve['tipo_combustible'];
+
+$ve_reserva = $row_ve['reserva'];
+
+$ve_estado_vehi = $row_ve['estado_vehi'];
 
 $i++;
 
@@ -275,17 +293,57 @@ $i++;
 
 <tr>
 
-<td><?php echo $reg_id; ?></td>
+<td><?php echo $ve_patente; ?></td>
 
-<td><?php echo $reg_rut; ?></td>
+<td> <?php echo $ve_marca; ?></td>
 
-<td><?php echo $reg_kilometraje; ?> KM</td>
+<td><img src="car_images/<?php echo $ve_foto_vehi; ?>" width="60" height="60"></td>
 
-<td> <?php echo $reg_destino; ?> </td>
+<td> <?php echo $ve_estado_vehi; ?> </td>
 
-<td><?php echo $reg_fecha; ?></td>
+<td><?php echo $ve_reserva; ?> </td>
 
-<td><?php echo $reg_tipo; ?></td>
+<td>
+
+<div class="dropdown">
+
+<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+
+<span class="caret"></span>
+
+</button>
+
+<ul class="dropdown-menu dropdown-menu-right">
+
+<li>
+
+<a href="index.php?car_delete=<?php echo $ve_id_vehi; ?>">
+
+<i class="fa fa-trash-o"></i> Borrar 
+
+</a>
+
+</li>
+
+<li>
+
+<a href="index.php?car_edit=<?php echo $ve_id_vehi; ?>">
+
+<i class="fa fa-pencil"> </i> Editar
+
+</a>
+
+</li>
+			
+</ul>
+  
+</div>
+
+</td>
+
+</a>
+
+</tr>
 
 <?php } ?>
 
@@ -296,12 +354,6 @@ $i++;
 </div><!-- table-responsive Ends -->
 
 <div class="text-right" ><!-- text-right Starts -->
-
-<a href="index.php?view_records" >
-
-Ver Todos Los Registros <i class="fa fa-arrow-circle-right" ></i>
-
-</a>
 
 </div><!-- text-right Ends -->
 

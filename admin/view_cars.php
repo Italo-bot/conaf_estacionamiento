@@ -38,7 +38,7 @@ else {
 
 <h3 class="panel-title" ><!-- panel-title Starts -->
 
-<i class="fa fa-money fa-fw" ></i> Vehículos Registrados
+<i class="fa fa-car" ></i> Vehículos Registrados
 
 </h3><!-- panel-title Ends -->
 
@@ -56,14 +56,7 @@ else {
 <th>Patente</th>
 <th>Kilometraje</th>
 <th>Marca</th>
-<th>Modelo</th>
-<th>N° Chasis</th>
-<th>N° Motor</th>
-<th>Año</th>
-<th>Color</th>
 <th>Foto</th>
-<th>Tipo Vehículo</th>
-<th>Tipo Combustible</th>
 <th>Estado</th>
 <th>Acciones</th>
 </tr>
@@ -122,21 +115,7 @@ $i++;
 
 <td> <?php echo $ve_marca; ?></td>
 
-<td> <?php echo $ve_modelo; ?></td>
-
-<td> <?php echo $ve_n_chasis; ?></td>
-
-<td> <?php echo $ve_n_motor; ?></td>
-
-<td> <?php echo $ve_year; ?></td>
-
-<td> <?php echo $ve_color; ?></td>
-
 <td><img src="car_images/<?php echo $ve_foto_vehi; ?>" width="60" height="60"></td>
-
-<td> <?php echo $ve_tipo_vehi; ?></td>
-
-<td> <?php echo $ve_tipo_combustible; ?> </td>
 
 <td> <?php echo $ve_estado_vehi; ?> </td>
 

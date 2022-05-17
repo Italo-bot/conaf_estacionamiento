@@ -157,12 +157,6 @@ Solicitar
 </thead>
 
 <tbody>
-<link rel="stylesheet" type="text/css" href="tcal.css" />
-	<script type="text/javascript" src="tcal.js"></script> 
-<form action="#">
-		<!-- add class="tcal" to your input field -->
-		<div><input type="text" name="date" class="tcal" value="" /></div>
-	</form>
 
 </tbody>
 

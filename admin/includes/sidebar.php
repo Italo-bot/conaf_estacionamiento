@@ -136,7 +136,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#usuarios">
 
-<i class="fa fa-fw fa-table"></i> Usuarios
+<i class="fa fa-smile-o"></i> Usuarios
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -160,7 +160,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#vehiculo">
 
-<i class="fa fa-fw fa-table"></i> Vehículos
+<i class="fa fa-car"></i> Vehículos
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -184,7 +184,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#admins">
 
-<i class="fa fa-fw fa-gear"></i> Administradores
+<i class="fa fa-smile-o"></i> Administradores
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -202,26 +202,6 @@ else {
 
 <li>
 <a href="index.php?user_profile=<?php echo $ad_id; ?>"> Editar Perfil </a>
-</li>
-
-</ul>
-
-</li><!-- li Ends -->
-
-<li><!-- li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#reserve">
-
-<i class="fa fa-fw fa-gear"></i> Solicitudes
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-</a>
-
-<ul id="reserve" class="collapse">
-
-<li>
-<a href="index.php?view_reserves"> Ver solicitudes </a>
 </li>
 
 </ul>
